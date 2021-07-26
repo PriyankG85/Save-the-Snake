@@ -19,23 +19,23 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth / 2 - 100, 884);
+  createCanvas(windowWidth / 2 - 110, windowHeight);
   engine = Engine.create();
   world = engine.world;
   engine.world.gravity.y = 0.5;
 
-  x1 = random([width - 55, 55, 350, 220]);
-  x2 = random([width - 55, 55, 350, 220]);
-  x3 = random([width - 55, 55, 350, 220]);
-  x4 = random([width - 55, 55, 350, 220]);
-  x5 = random([width - 55, 55, 350, 220]);
-  x6 = random([width - 55, 55, 350, 220]);
-  x7 = random([width - 55, 55, 350, 220]);
-  x8 = random([width - 55, 55, 350, 220]);
-  x9 = random([width - 55, 55, 350, 220]);
-  x10 = random([width - 55, 55, 350, 220]);
-  x11 = random([width - 55, 55, 350, 220]);
-  x12 = random([width - 55, 55, 350, 220]);
+  x1 = random([width - 55, 55, 350, width/2-30]);
+  x2 = random([width - 55, 55, 350, width/2-30]);
+  x3 = random([width - 55, 55, 350, width/2-30]);
+  x4 = random([width - 55, 55, 350, width/2-30]);
+  x5 = random([width - 55, 55, 350, width/2-30]);
+  x6 = random([width - 55, 55, 350, width/2-30]);
+  x7 = random([width - 55, 55, 350, width/2-30]);
+  x8 = random([width - 55, 55, 350, width/2-30]);
+  x9 = random([width - 55, 55, 350, width/2-30]);
+  x10 = random([width - 55, 55, 350, width/2-30]);
+  x11 = random([width - 55, 55, 350, width/2-30]);
+  x12 = random([width - 55, 55, 350, width/2-30]);
   c1 = random(['purple', 'green', 'red', 'silver', 'grey'])
   c2 = random(['purple', 'green', 'red', 'silver', 'grey'])
   c3 = random(['purple', 'green', 'red', 'silver', 'grey'])
@@ -103,24 +103,21 @@ function draw() {
   background('aliceblue');
   Engine.update(engine);
 
-  fill('grey');
-  textSize(30);
-  text('Drag your mouse to move the Snake.', 30, 50);
-  // text('Snake.', 50, 100);
+  // text('Press Enter to Play', width/2-100, height/2);
 
   translate(0, snake1.body.position.y - height / 2);
-  obs1.display();
-  obs2.display();
-  obs3.display();
-  obs4.display();
-  obs5.display();
-  obs6.display();
-  obs7.display();
-  obs8.display();
-  obs9.display();
-  obs10.display();
-  obs11.display();
-  obs12.display();
+  obs1.display(height+100);
+  obs2.display(height+100);
+  obs3.display(height+100);
+  obs4.display(height+100);
+  obs5.display(height+100);
+  obs6.display(height+100);
+  obs7.display(height+100);
+  obs8.display(height+100);
+  obs9.display(height+100);
+  obs10.display(height+100);
+  obs11.display(height+100);
+  obs12.display(height+100);
   bound1.display();
   bound2.display();
   snake1.display();
@@ -131,6 +128,11 @@ function draw() {
   fl.display();
   // snake6.display();
   // console.log(snake1.body.position);
+  
+  fill('grey');
+  textSize(40);
+  text('Drag your mouse to move the Snake.', 80, 50);
+
   drawSprites();
 
   if (fl.ground.position.y > height / 2 - 100) {

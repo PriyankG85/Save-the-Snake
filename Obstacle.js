@@ -6,7 +6,7 @@ class Obstacle {
         this.c = c;
         World.add(world, this.body);
     }
-    display() {
+    display(h) {
         var pos = this.body.position
         push();
         translate(pos.x, pos.y);
@@ -15,7 +15,7 @@ class Obstacle {
         rect(0, 0, this.w, this.h);
         pop();
 
-        if (this.body.position.y > 950) {
+        if (this.body.position.y > h) {
             World.remove(world, this.body)
         }
     }
